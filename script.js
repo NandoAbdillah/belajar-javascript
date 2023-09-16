@@ -164,7 +164,7 @@ function ubahNama() {
 }
 
 function waktu() {
-    h1.innerHTML=Date();
+    document.querySelector('#judulwaktu').innerHTML=Date();
 }
 
 function lihatZodiac () {
@@ -307,3 +307,24 @@ function jumlah () {
     document.querySelector("#hasil").innerHTML=hasil;
 }
 
+let btn = document.querySelector("#waktu");
+btn.onclick=waktu;
+
+window.onload = function () {
+    let isi = document.querySelector("#inputnama");
+    let tampil = document.querySelector("#namasaya");
+    isi.onmouseover = function () {
+    tampil.textContent= isi.value;
+    }
+
+    let elemen = document.querySelector('#hari');
+    elemen.addEventListener("mouseover", coba);
+
+    function coba() {
+        alert("coba coba");
+    }
+
+    let btnZodiac = document.querySelector("#periksa");
+    btnZodiac.addEventListener("click", lihatZodiac);
+
+}
